@@ -36,18 +36,22 @@ $(function() {
     describe('The menu', function() {
 
         it('menu hidden by default',function(){
-        var body = document.getElementsByTagName('body')[0];
-         expect(body.classList).toContain('menu-hidden');
+            var body = document.getElementsByTagName('body')[0];
+            expect(body.classList).toContain('menu-hidden');
         });
 
         it('menu changed when clicked',function(){
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
+        var body = document.getElementsByTagName('body')[0];
+        menuIcon = $('.menu-icon-link');
+        //test clicking opens menu
+        menuIcon.click();
+        expect(body.classList).not.toContain('menu-hidden');
+        //test clicking again closes menu
+        menuIcon.click();
+        expect(body.classList).toContain('menu-hidden');
         });
     });
+
     /* TODO: Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
         it('loadFeed function calls and completes',function(){
