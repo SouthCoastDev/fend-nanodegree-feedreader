@@ -4,6 +4,9 @@ In this project you are given a web-based application that reads RSS feeds. The 
 
 # How to run these tests?
 
+Just download the whole repo and open the index.html document with your chosen web browser.
+
+The page being tested is shown at the top and the tests are shown at the bottom of the page in the Jasmine section.
 
 # What is being tested?
 
