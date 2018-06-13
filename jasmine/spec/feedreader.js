@@ -60,11 +60,10 @@ $(function() {
         });
 
         it('loadFeed function calls and completes', function(){
-            expect(allFeeds.length).not.toBe(0);
+            expect($('.feed').children()[0]).not.toBe(undefined);
         });
     });
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
 
         beforeEach(function(done){
