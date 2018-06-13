@@ -40,24 +40,23 @@ $(function() {
         });
 
         it('menu changed when clicked',function(){
-        var body = document.getElementsByTagName('body')[0];
-        menuIcon = $('.menu-icon-link');
-        //test clicking opens menu
-        menuIcon.click();
-        expect(body.classList).not.toContain('menu-hidden');
-        //test clicking again closes menu
-        menuIcon.click();
-        expect(body.classList).toContain('menu-hidden');
+            var body = document.getElementsByTagName('body')[0];
+            menuIcon = $('.menu-icon-link');
+            //test clicking opens menu
+            menuIcon.click();
+            expect(body.classList).not.toContain('menu-hidden');
+            //test clicking again closes menu
+            menuIcon.click();
+            expect(body.classList).toContain('menu-hidden');
         });
     });
 
     describe('Initial Entries', function(){
 
-        beforeEach(function(done){
-            loadFeed(0, function(){
-                done();
+            beforeEach(function(done){
+                loadFeed(0, done)
             });
-        });
+
 
         it('loadFeed function calls and completes', function(){
             expect($('.feed').children()[0]).not.toBe(undefined);
@@ -70,11 +69,12 @@ $(function() {
             loadFeed(0, function(){
                 // feed 0 done loading
                 firstUrl = document.querySelector('.feed').firstElementChild.href;
+
                 loadFeed(1, function(){
                     // feed 1 done loading
-                secondUrl =  document.querySelector('.feed').firstElementChild.href;
-                // all variables initialised, can begin tests
-                  done();
+                    secondUrl =  document.querySelector('.feed').firstElementChild.href;
+                    // all variables initialised, can begin tests
+                    done();
                });
            });
 
