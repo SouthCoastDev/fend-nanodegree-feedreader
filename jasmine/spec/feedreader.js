@@ -59,7 +59,7 @@ $(function() {
 
 
         it('loadFeed function calls and completes', function(){
-            expect($('.feed').children()[0]).not.toBe(undefined);
+            expect($('.feed .entry').length > 0 ).toBe(true);
         });
     });
 
